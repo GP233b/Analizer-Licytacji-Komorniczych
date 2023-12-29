@@ -2,18 +2,29 @@ import fun
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 import time
-
+from selenium.webdriver.chrome.options import Options
+from webdriver_manager.chrome import ChromeDriverManager
 
 #Otwarcie Strony
 WEB = "https://licytacje.komornik.pl/Notice/Search"
-PATH = "D:\ChromeDriver\chrome-win64\chrome.exe"
-service = Service(PATH)
-driver = webdriver.Chrome(service=service)
+# Ścieżka do pliku chrome.exe
+
+"""
+options = Options()
+options.add_argument("start-maximized")
+options.add_experimental_option("excludeSwitches", ["enable-automation"])
+options.add_experimental_option('excludeSwitches', ['enable-logging'])
+options.add_experimental_option('useAutomationExtension', False)
+options.add_argument('--disable-blink-features=AutomationControlled')
+"""
+#driver = webdriver.Chrome(service=service)
+driver = webdriver.Chrome(ChromeDriverManager().install())
+
 
 
 list_of_auctions=[]
 
-przedzial_cenowy = [0,20_000,50_000,100_000 , 150_000,200_000,300_000,500_000]
+przedzial_cenowy = [0,20_000,50_000,100_000,300_000,500_000 ]
 
 for i in range(1,len(przedzial_cenowy)):
     driver.get(WEB)
@@ -27,4 +38,11 @@ driver.quit()
 fun.odswiezenie_bazy(list_of_auctions)
 
 
-time.sleep(10)
+fun.szukanie_księgi_wieczystej_z_HTML()
+#fun.szukanie_linku_do_ksiegi(driver)
+
+
+fun.zapis_do_pliku_xlsx()
+
+
+time.sleep(2)
