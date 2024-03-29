@@ -17,3 +17,5 @@ Wykorzystane zostały takie wzorce projektowe jak: <br>
   
 
 Program pisany pod prywatne zamówienie.
+
+(PODCZAS PRÓBY URUCHOMIENIA NALEŻY PAMIĘTAC O POPRAWNEJ WERSJI CHROMEDRIVERA)
