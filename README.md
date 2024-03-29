@@ -9,11 +9,11 @@ Analizer służy do przeglądania, po wybranych filtrach licytacji, komorniczych
 
 Rozwizanie bazuje na bazie MS-SQL, silniku Chrome i aplikacji w Python.
 
-Wykorzystane zostałę takie wzorce projektowe jak :
-  -Factory
-  -Decorator
-  -Proxy
-  -observer
+Wykorzystane zostały takie wzorce projektowe jak: <br>
+- Factory <br>
+- Decorator <br>
+- Proxy <br>
+- Observer
   
 
 Program pisany pod prywatne zamówienie.
